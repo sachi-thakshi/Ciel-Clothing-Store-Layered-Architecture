@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorPane" prefHeight="844.0" prefWidth="1518.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.cielclothingstore.controller.ManagerViewController">
+    <children>
+        <ImageView fitHeight="844.0" fitWidth="1534.0" opacity="0.52" pickOnBounds="true">
+            <image>
+                <Image url="@../pictures/ManagerDashBoard%20Page.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="512.0" layoutY="38.0" prefHeight="43.0" prefWidth="608.0" text="Welcome to the Manager DashBoard" textFill="#02066f" underline="true">
+            <font>
+                <Font name="Britannic Bold" size="37.0" />
+            </font>
+        </Label>
+        <AnchorPane fx:id="content" layoutX="300.0" layoutY="96.0" prefHeight="734.0" prefWidth="1214.0" />
+        <Pane layoutX="12.0" layoutY="95.0" prefHeight="734.0" prefWidth="270.0" style="-fx-background-color: DBE9FA;">
+            <children>
+                <JFXButton fx:id="btnLoginPage" layoutX="14.0" layoutY="597.0" onAction="#navigateToLoginPage" prefHeight="46.0" prefWidth="243.0" style="-fx-background-color: #02066f;" text="Back to the Login Page" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </JFXButton>
+                <VBox layoutX="23.0" layoutY="103.0" prefHeight="462.0" prefWidth="226.0">
+                    <children>
+                        <JFXButton onAction="#navigateToCustomerPage" prefHeight="47.0" prefWidth="244.0" text="Customer">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToEmployeePage" prefHeight="52.0" prefWidth="354.0" text="Employee">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToSupplierPage" prefHeight="52.0" prefWidth="354.0" text="Supplier">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToOrdersPage" prefHeight="52.0" prefWidth="354.0" text="Orders">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToOrderDetailsPage" prefHeight="52.0" prefWidth="354.0" text="Order Details">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToProductPage" prefHeight="52.0" prefWidth="354.0" text="Product">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToProductDetailsPage" prefHeight="52.0" prefWidth="354.0" text="Product Details">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToUserPage" prefHeight="52.0" prefWidth="354.0" text="User">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToPaymentDetailsPage" prefHeight="53.0" prefWidth="226.0" text="Payment Details">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                    </children>
+                </VBox>
+                <ImageView fitHeight="86.0" fitWidth="95.0" layoutX="4.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../pictures/Logo.jpg" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

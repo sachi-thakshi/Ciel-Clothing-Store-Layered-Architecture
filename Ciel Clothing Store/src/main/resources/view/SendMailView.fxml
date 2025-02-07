@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Alert?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="lk.ijse.gdse.cielclothingstore.controller.SendMailController" spacing="15" alignment="CENTER" style="-fx-padding: 20;">
+    <!-- To Email -->
+    <Label text="To Email:"/>
+    <TextField fx:id="txtToEmail" promptText="Enter recipient email address"/>
+
+    <!-- From Email -->
+    <Label text="From Email:"/>
+    <TextField fx:id="txtFromEmail" promptText="Enter your email address"/>
+
+    <!-- Subject -->
+    <Label text="Subject:"/>
+    <TextField fx:id="txtSubject" promptText="Enter subject"/>
+
+    <!-- Body -->
+    <Label text="Body:"/>
+    <TextArea fx:id="txtBody" promptText="Enter email body" prefHeight="150"/>
+
+    <!-- Send Button -->
+    <Button text="Send Email" onAction="#sendGmail" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+</VBox>
+

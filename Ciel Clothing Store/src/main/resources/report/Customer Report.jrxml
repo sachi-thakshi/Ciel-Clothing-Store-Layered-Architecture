@@ -1,0 +1,116 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="Customer Report" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="79f726c0-434e-4b33-a4fe-e1600bd57bde">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Ciel-Clothing-Store-DBConnection"/>
+	<parameter name="today" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[SELECT * FROM Customer]]></query>
+	<field name="CustomerID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CustomerID"/>
+		<property name="com.jaspersoft.studio.field.label" value="CustomerID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="UserID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="UserID"/>
+		<property name="com.jaspersoft.studio.field.label" value="UserID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="Priority" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Priority"/>
+		<property name="com.jaspersoft.studio.field.label" value="Priority"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="ContactNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ContactNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="ContactNo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="Email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Email"/>
+		<property name="com.jaspersoft.studio.field.label" value="Email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<variable name="CustomerID1" calculation="Count" class="java.lang.Integer">
+		<expression><![CDATA[$F{CustomerID}]]></expression>
+	</variable>
+	<background splitType="Stretch"/>
+	<title height="72" splitType="Stretch">
+		<element kind="staticText" uuid="879c09ea-a5e4-4e39-bbb9-442c6fb7ccb8" x="0" y="10" width="548" height="30" fontName="Britannic Bold" fontSize="20.0" hTextAlign="Center">
+			<text><![CDATA[All Customer Report]]></text>
+		</element>
+		<element kind="line" uuid="0f6b90ee-15e8-4dc3-91f3-353dfa04c77b" x="0" y="50" width="549" height="1"/>
+	</title>
+	<pageHeader height="44" splitType="Stretch">
+		<element kind="textField" uuid="7ccc88fd-f3fe-4c9d-838e-895cc1bea7c6" x="430" y="0" width="100" height="30">
+			<expression><![CDATA[$P{today}]]></expression>
+		</element>
+	</pageHeader>
+	<columnHeader height="31" splitType="Stretch">
+		<element kind="staticText" uuid="a049450b-a7f5-469d-aff7-144f993def90" x="0" y="0" width="70" height="29" fontName="Serif" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[CustomerID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="57cd6c84-03c4-420e-8daf-9afae5a087f9"/>
+		</element>
+		<element kind="staticText" uuid="cf70b79c-fe22-46c1-8937-dd72bcae4b6e" x="70" y="0" width="50" height="29" fontName="Serif" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[UserID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7692496-e043-4b15-ae3c-be6e0f5749bf"/>
+		</element>
+		<element kind="staticText" uuid="bda445bf-89d4-46c1-b33c-c1dd5479cfd4" x="120" y="0" width="80" height="29" fontName="Serif" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9806151c-d659-4eb0-aac4-480bc84d138d"/>
+		</element>
+		<element kind="staticText" uuid="bcb4b59d-4c4e-4655-81bc-48f92c75eaf3" x="200" y="0" width="80" height="29" fontName="Serif" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Priority]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7cfa8945-6e56-43bb-9bfb-71020923fd06"/>
+		</element>
+		<element kind="staticText" uuid="fdedc44c-2ffd-47d9-b603-3e45424da450" x="280" y="0" width="90" height="29" fontName="Serif" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[ContactNo]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f98187d-d221-40c1-9462-64891a2b211f"/>
+		</element>
+		<element kind="staticText" uuid="e2989509-7c48-47b5-a600-93a26be727f6" x="370" y="2" width="178" height="29" fontName="Serif" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Email]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="90f9ab73-4dc6-45fb-afde-22aa9be0801b"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="55" splitType="Stretch">
+			<element kind="textField" uuid="49e4601e-c2cd-4dc5-9e58-2295d4a19d80" x="0" y="0" width="70" height="32" fontName="Serif" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{CustomerID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="57cd6c84-03c4-420e-8daf-9afae5a087f9"/>
+			</element>
+			<element kind="textField" uuid="c9593f05-187d-4518-8223-22edc3e76efc" x="70" y="0" width="50" height="30" fontName="Serif" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{UserID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7692496-e043-4b15-ae3c-be6e0f5749bf"/>
+			</element>
+			<element kind="textField" uuid="7080c468-86f2-4d57-a58f-3b40c4f0ead6" x="120" y="1" width="80" height="30" fontName="Serif" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{Name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9806151c-d659-4eb0-aac4-480bc84d138d"/>
+			</element>
+			<element kind="textField" uuid="386dae3c-220c-4c8a-a80b-8e416861772e" x="200" y="1" width="80" height="30" fontName="Serif" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{Priority}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7cfa8945-6e56-43bb-9bfb-71020923fd06"/>
+			</element>
+			<element kind="textField" uuid="ceae0f77-59f2-443e-a1af-7cab8d514f1a" x="280" y="0" width="90" height="30" fontName="Serif" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{ContactNo}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f98187d-d221-40c1-9462-64891a2b211f"/>
+			</element>
+			<element kind="textField" uuid="c2d39048-e16a-4741-8dea-dfd37327a600" x="370" y="0" width="178" height="30" fontName="Serif" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{Email}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="90f9ab73-4dc6-45fb-afde-22aa9be0801b"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="43" splitType="Stretch">
+		<element kind="staticText" uuid="852f5736-478d-4bc2-a9ad-8c85340a3d3c" x="300" y="0" width="100" height="30" fontName="Serif" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Customer Count]]></text>
+		</element>
+		<element kind="textField" uuid="97427298-7017-465c-8b78-51fea6b8fb62" x="400" y="0" width="100" height="30" fontName="Serif" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$V{CustomerID1}]]></expression>
+		</element>
+	</summary>
+</jasperReport>

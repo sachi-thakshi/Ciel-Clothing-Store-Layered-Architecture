@@ -1,0 +1,166 @@
+DROP DATABASE ciel_clothing_store;
+
+CREATE DATABASE Ciel_Clothing_Store;
+USE Ciel_Clothing_Store;
+
+CREATE TABLE Employee (
+    EmployeeID VARCHAR(10) PRIMARY KEY,
+    Name VARCHAR(225),
+    Salary DECIMAL(10, 2),
+    Role VARCHAR(30),
+    ContactNo VARCHAR(15)
+);
+
+DESC Employee;
+
+CREATE TABLE UserAccount (
+    UserID VARCHAR(10) PRIMARY KEY,
+    EmployeeID VARCHAR(10) NOT NULL,
+    Name VARCHAR(50) NOT NULL,
+    Role VARCHAR(20) NOT NULL,
+    Password VARCHAR(10),
+    ContactNo VARCHAR(15) NOT NULL,
+    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+DESC UserAccount;
+
+CREATE TABLE Customer (
+    CustomerID VARCHAR(10) PRIMARY KEY,
+    UserID VARCHAR(10) NOT NULL,
+    Name VARCHAR(50) NOT NULL,
+    Priority VARCHAR(225),
+    ContactNo VARCHAR(15),
+    Email VARCHAR(225),
+    FOREIGN KEY (UserID) REFERENCES UserAccount(UserID)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+DESC Customer;
+
+CREATE TABLE Orders (
+    OrderID VARCHAR(10) PRIMARY KEY,
+    CustomerID VARCHAR(10),
+    Date date,
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+DESC Orders;
+
+
+CREATE TABLE Supplier (
+    SupplierID VARCHAR(10) PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    ContactNo VARCHAR(15) NOT NULL,
+    Address VARCHAR(225) NOT NULL
+);
+
+DESC Supplier;
+
+CREATE TABLE Product (
+    ProductID VARCHAR(10) PRIMARY KEY,
+    Name VARCHAR(50),
+    Price DECIMAL(10, 2) NOT NULL,
+    Description VARCHAR(50),
+    Quantity INT,
+    SupplierID VARCHAR(10),
+    FOREIGN KEY (SupplierID) REFERENCES Supplier(SupplierID)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+DESC Product;
+
+CREATE TABLE Payment (
+    PaymentID VARCHAR(10) PRIMARY KEY,
+    OrderID VARCHAR(10) NOT NULL,
+    Amount DECIMAL(10, 2),
+    Date date,
+    Time TIME,
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+DESC Payment;
+
+
+CREATE TABLE OrderDetails (
+    OrderID VARCHAR(10),
+    ProductID VARCHAR(10),
+	Quantity INT,
+	Price DECIMAL(10, 2),
+    PRIMARY KEY (OrderID, ProductID),
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+    FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+DESC OrderDetails;
+
+CREATE TABLE ProductDetails (
+    ProductID VARCHAR(10),
+    SupplierID VARCHAR(10),
+    PRIMARY KEY (ProductID, SupplierID),
+    FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+    FOREIGN KEY (SupplierID) REFERENCES Supplier(SupplierID)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+DESC ProductDetails;
+
+INSERT INTO Employee (EmployeeID, Name, Salary, Role, ContactNo) VALUES
+('E001', 'Sachini Thakshila', 60000.00, 'Cashier', '071-2353785'),
+('E002', 'Tharusha Sandaruwan', 45000.00, 'Manager', '078-1434888'),
+('E003', 'Anjana Heshan', 47000.00, 'Sales', '076-4810851'),
+('E004', 'Sainsa Rethmi', 52000.00, 'Supervisor', '070-4839927'),
+('E005', 'Prabadee Induwara', 48000.00, 'Customer Support', '077-4796256');
+
+INSERT INTO UserAccount (UserID, EmployeeID, Name, Role, Password,  ContactNo) VALUES
+('U001', 'E001', 'Sachini', 'Cashier', '1234' , '071-2352385'),
+('U002', 'E002', 'Tharusha', 'Manager', '2345' , '078-1434888');
+
+INSERT INTO Customer (CustomerID, UserID, Name, Priority, ContactNo, Email) VALUES
+('C001', 'U002', 'Nisal Sahansith', 'loyalty', '075-9535671', 'Nisal@gmail.com'),
+('C002', 'U002', 'Charuka Hansaja', 'non loyalty', '071-6968190', 'Charuka@gmail.com'),
+('C003', 'U002', 'Sasindu Denuwan', 'loyalty', '076-3281084', 'Sasindu@gmail.com'),
+('C004', 'U002', 'Kamesh Nethsara', 'non loyalty', '077-1399828', 'Kamesh@gmail.com'),
+('C005', 'U002', 'Dilmi Kaushalya', 'loyalty', '077-7381720', 'Dilmi@gmail.com');
+
+INSERT INTO Supplier (SupplierID, Name, ContactNo, Address) VALUES
+('S001', 'Textile Supplier Co.', '345-678-9012', '123 Textile St'),
+('S002', 'Denim Suppliers Inc.', '456-789-0123', '456 Denim Rd'),
+('S003', 'Leather Goods Ltd.', '567-890-1234', '789 Leather Ln'),
+('S004', 'Footwear Co.', '678-901-2345', '101 Shoe Ave'),
+('S005', 'Cap Makers', '789-012-3456', '202 Hat Blvd');
+
+INSERT INTO Product (ProductID, Name, Price, Description, Quantity, SupplierID)
+VALUES ('P001', 'Men\'s T-Shirt', 1000.00, '100% Cotton T-Shirt, available in multiple colors', 50, 'S001');
+
+INSERT INTO Product (ProductID, Name, Price, Description, Quantity, SupplierID)
+VALUES ('P002', 'Women\'s Skinny Jeans', 6500.00, 'Stretchable denim, fits like a glove', 40, 'S002');
+
+INSERT INTO Product (ProductID, Name, Price, Description, Quantity, SupplierID)
+VALUES ('P003', 'Women\'s Floral Dress', 3500.00, 'Soft fabric, perfect for casual or party wear', 30, 'S003');
+
+INSERT INTO Product (ProductID, Name, Price, Description, Quantity, SupplierID)
+VALUES ('P004', 'Men\'s Casual Shoes', 2950.00, 'Comfortable leather shoes for everyday wear', 60, 'S004');
+
+INSERT INTO Product (ProductID, Name, Price, Description, Quantity, SupplierID)
+VALUES ('P005', 'Unisex Hoodie', 4300.00, 'Cotton blend, stylish and warm, unisex design', 80, 'S005');
+
+SELECT * FROM UserAccount WHERE Name = 'Sachini' AND Password = '1234';
+
+SELECT CustomerID FROM customer;
+

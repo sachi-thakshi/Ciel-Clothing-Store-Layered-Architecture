@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorPane" prefHeight="844.0" prefWidth="1518.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.cielclothingstore.controller.CashierDashBoardViewController">
+    <children>
+        <ImageView fitHeight="844.0" fitWidth="1534.0" opacity="0.56" pickOnBounds="true">
+            <image>
+                <Image url="@../pictures/CashierDashBoard.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="563.0" layoutY="29.0" prefHeight="43.0" prefWidth="608.0" text="Welcome to the Cashier DashBoard" textFill="#02066f" underline="true">
+            <font>
+                <Font name="Britannic Bold" size="37.0" />
+            </font>
+        </Label>
+        <AnchorPane fx:id="content" layoutX="300.0" layoutY="96.0" prefHeight="734.0" prefWidth="1214.0" />
+        <Pane layoutX="18.0" layoutY="98.0" prefHeight="728.0" prefWidth="266.0" style="-fx-background-color: #02066f;">
+            <children>
+                <VBox layoutX="9.0" layoutY="145.0" prefHeight="402.0" prefWidth="243.0">
+                    <children>
+                        <JFXButton onAction="#navigateToCustomerPage" prefHeight="82.0" prefWidth="243.0" text="Customer" textFill="WHITE">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToOrdersPage" prefHeight="74.0" prefWidth="243.0" text="Orders" textFill="WHITE">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToProductPage" prefHeight="76.0" prefWidth="243.0" text="Product" textFill="WHITE">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToOrderDetailsPage" prefHeight="74.0" prefWidth="243.0" text="Order Details" textFill="WHITE">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToProductDetailsPage" prefHeight="87.0" prefWidth="243.0" text="Product Details" textFill="WHITE">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton onAction="#navigateToPaymentDetailsPage" prefHeight="87.0" prefWidth="243.0" text="Payment Details" textFill="WHITE">
+                            <font>
+                                <Font name="Britannic Bold" size="22.0" />
+                            </font>
+                        </JFXButton>
+                    </children>
+                </VBox>
+                <JFXButton fx:id="btnLoginPage" layoutX="12.0" layoutY="632.0" onAction="#navigateToLoginPage" prefHeight="46.0" prefWidth="243.0" style="-fx-background-color: white;" text="Back to the Login Page" textFill="#02066f">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </JFXButton>
+                <ImageView fitHeight="98.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../pictures/Logo.jpg" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

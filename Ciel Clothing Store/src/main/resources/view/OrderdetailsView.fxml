@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorPane" prefHeight="734.0" prefWidth="1214.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.cielclothingstore.controller.OrderdetailsViewController">
+    <children>
+        <AnchorPane prefHeight="734.0" prefWidth="1215.0">
+            <children>
+                <Label layoutX="408.0" layoutY="38.0" prefHeight="64.0" prefWidth="291.0" text="Order Details">
+                    <font>
+                        <Font name="Britannic Bold" size="42.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <TableView fx:id="tblOrderDetails" layoutX="22.0" layoutY="140.0" opacity="0.83" prefHeight="536.0" prefWidth="1183.0">
+            <columns>
+                <TableColumn fx:id="colOrderId" prefWidth="311.999981880188" text="OrderID" />
+                <TableColumn fx:id="colProductId" prefWidth="360.0" text="ProductID" />
+                <TableColumn fx:id="colQty" prefWidth="222.4000244140625" text="Quantity" />
+                <TableColumn fx:id="colPrice" prefWidth="289.59991455078125" text="Price" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
