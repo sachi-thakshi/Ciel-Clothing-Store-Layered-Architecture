@@ -14,7 +14,7 @@ import lk.ijse.gdse.cielclothingstore.bo.custom.impl.UserBOImpl;
 import lk.ijse.gdse.cielclothingstore.dto.UserDto;
 import lk.ijse.gdse.cielclothingstore.view.tm.UserTM;
 
-import java.net.URL;
+//import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
