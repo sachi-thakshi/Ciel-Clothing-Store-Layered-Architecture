@@ -67,7 +67,7 @@ public class SupplierViewController implements Initializable {
     private TextField txtName;
 
 //    SupplierModel supplierModel = new SupplierModel();
-    SupplierBO supplierBO = new SuppilerBOImpl();
+    SupplierBO supplierBO = (SupplierBO) BOFactory.getInstance().getBO(BOFactory.BOType.SUPPLIER);
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

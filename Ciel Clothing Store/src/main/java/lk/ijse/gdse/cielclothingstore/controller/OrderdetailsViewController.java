@@ -42,7 +42,7 @@ public class OrderdetailsViewController implements Initializable {
     private final ObservableList<OrderDetailsTM> orderDetailsList = FXCollections.observableArrayList();
 
 //    private final OrderDetailsModel orderDetailsModel = new OrderDetailsModel();
-    private final OrderDetailsBO orderDetailsBO = new OrderDetailsBOImpl();
+    private final OrderDetailsBO orderDetailsBO = (OrderDetailsBO) BOFactory.getInstance().getBO(BOFactory.BOType.ORDER_DETAILS);
 
 
     @Override

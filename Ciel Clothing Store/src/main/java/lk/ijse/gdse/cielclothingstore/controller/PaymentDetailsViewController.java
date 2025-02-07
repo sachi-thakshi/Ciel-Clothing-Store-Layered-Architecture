@@ -47,7 +47,7 @@ public class PaymentDetailsViewController implements Initializable {
     private TableView<PaymentDetailsTM> tbtPaymentDetails;
 
 //    private final PaymentModel paymentModel = new PaymentModel();
-    private final PaymentDetailsBO paymentDetailsBO = new PaymentDetailsBOImpl();
+    private final PaymentDetailsBO paymentDetailsBO = (PaymentDetailsBO) BOFactory.getInstance().getBO(BOFactory.BOType.PAYMENT);
 
     private final ObservableList<PaymentDetailsTM> paymentDetailsList = FXCollections.observableArrayList();
 

@@ -97,9 +97,9 @@ public class OrderViewController implements Initializable {
 
     private final ObservableList<CartTM> cartTMS = FXCollections.observableArrayList();
 
-    private final OrderBO orderBO = new OrderBOImpl();
-    private final CustomerBO customerBO = new CustomerBOImpl();
-    private final ProductBO productBO = new ProductBOImpl();
+    private final OrderBO orderBO = (OrderBO) BOFactory.getInstance().getBO(BOFactory.BOType.ORDERS);
+    private final CustomerBO customerBO = (CustomerBO) BOFactory.getInstance().getBO(BOFactory.BOType.CUSTOMER);
+    private final ProductBO productBO = (ProductBO) BOFactory.getInstance().getBO(BOFactory.BOType.PRODUCT);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

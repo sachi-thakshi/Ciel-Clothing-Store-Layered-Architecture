@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import lk.ijse.gdse.cielclothingstore.bo.BOFactory;
 import lk.ijse.gdse.cielclothingstore.bo.custom.CustomerBO;
 import lk.ijse.gdse.cielclothingstore.bo.custom.impl.CustomerBOImpl;
 import lk.ijse.gdse.cielclothingstore.db.DBConnection;
@@ -90,7 +91,7 @@ public class CustomerViewController implements Initializable {
     private TextField txtUserID;
 
 //    CustomerModel customerModel = new CustomerModel();
-    CustomerBO customerBO = new CustomerBOImpl();
+    CustomerBO customerBO = (CustomerBO) BOFactory.getInstance().getBO(BOFactory.BOType.CUSTOMER);
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

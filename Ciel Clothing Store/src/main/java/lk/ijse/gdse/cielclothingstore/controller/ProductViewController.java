@@ -78,7 +78,7 @@ public class ProductViewController  implements Initializable {
     private TextField txtSupplierId;
 
 //    ProductModel productModel = new ProductModel();
-    ProductBO productBO = new ProductBOImpl();
+    ProductBO productBO = (ProductBO) BOFactory.getInstance().getBO(BOFactory.BOType.PRODUCT);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

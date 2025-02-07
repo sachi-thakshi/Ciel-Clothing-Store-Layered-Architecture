@@ -69,7 +69,8 @@ public class EmployeeViewController implements Initializable {
     private TextField txtSalary;
 
 //    EmployeeModel employeeModel = new EmployeeModel();
-    EmployeeBO employeeBO = new EmployeeBOImpl();
+    EmployeeBO employeeBO = (EmployeeBO) BOFactory.getInstance().getBO(BOFactory.BOType.EMPLOYEE);
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

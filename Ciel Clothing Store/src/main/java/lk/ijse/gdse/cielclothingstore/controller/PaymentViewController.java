@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.gdse.cielclothingstore.bo.BOFactory;
 import lk.ijse.gdse.cielclothingstore.bo.custom.PaymentBO;
 import lk.ijse.gdse.cielclothingstore.bo.custom.UserBO;
 import lk.ijse.gdse.cielclothingstore.bo.custom.impl.PaymentBOImpl;
@@ -90,8 +91,8 @@ public class PaymentViewController implements Initializable {
 //    private PaymentModel paymentModel = new PaymentModel();
     private OrderDataSingleton orderService = OrderDataSingleton.getInstance();
 
-    private final UserBO userBO = new UserBOImpl();
-    private final PaymentBO paymentBO = new PaymentBOImpl();
+    private final UserBO userBO = (UserBO) BOFactory.getInstance().getBO(BOFactory.BOType.USERACCOUNT);
+    private final PaymentBO paymentBO = (PaymentBO) BOFactory.getInstance().getBO(BOFactory.BOType.PAYMENT);
 
     private final ObservableList<PaymentTM> paymentTMS = FXCollections.observableArrayList();
 

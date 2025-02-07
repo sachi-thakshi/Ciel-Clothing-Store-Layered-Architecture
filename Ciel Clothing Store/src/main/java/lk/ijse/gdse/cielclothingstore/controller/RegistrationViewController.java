@@ -134,7 +134,7 @@ public class RegistrationViewController {
     private TextField txtUserNameRegistration;
 
 //    private final RegistrationModel registrationModel = new RegistrationModel();
-    private final RegistrationBO registrationBO = new RegistrationBOImpl();
+    private final RegistrationBO registrationBO = (RegistrationBO) BOFactory.getInstance().getBO(BOFactory.BOType.USERACCOUNT);
     UserBO userBO = new UserBOImpl();
 
     public void initialize() {

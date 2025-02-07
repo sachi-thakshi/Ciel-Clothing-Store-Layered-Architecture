@@ -31,7 +31,7 @@ public class ProductDetailsViewController implements Initializable {
     private TableView<ProductDetailsTM> tblProductDetails;
 
 //    private final ProductDetailsModel productDetailsModel = new ProductDetailsModel();
-    private final ProductDetailsBO productDetailsBO = new ProductDetailsBOImpl();
+    private final ProductDetailsBO productDetailsBO = (ProductDetailsBO) BOFactory.getInstance().getBO(BOFactory.BOType.PRODUCT_DETAILS);
 
     private final ObservableList<ProductDetailsTM> productDetailsList = FXCollections.observableArrayList();
 

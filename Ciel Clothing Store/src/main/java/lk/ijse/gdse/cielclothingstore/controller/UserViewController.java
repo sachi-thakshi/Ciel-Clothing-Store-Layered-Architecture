@@ -70,7 +70,7 @@ public class UserViewController implements Initializable {
     private TextField txtContactNo;
 
 //    UserModel userModel = new UserModel();
-    UserBO userBO = new UserBOImpl();
+    UserBO userBO = (UserBO) BOFactory.getInstance().getBO(BOFactory.BOType.USERACCOUNT);
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
