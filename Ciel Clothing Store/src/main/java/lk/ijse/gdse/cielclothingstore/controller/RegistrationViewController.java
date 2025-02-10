@@ -134,12 +134,12 @@ public class RegistrationViewController {
     private TextField txtUserNameRegistration;
 
 //    private final RegistrationModel registrationModel = new RegistrationModel();
-    private final RegistrationBO registrationBO = (RegistrationBO) BOFactory.getInstance().getBO(BOFactory.BOType.USERACCOUNT);
-    UserBO userBO = new UserBOImpl();
+    //private final RegistrationBO registrationBO = (RegistrationBO) BOFactory.getInstance().getBO(BOFactory.BOType.REGISTRATION);
+    UserBO userBO = (UserBO) BOFactory.getInstance().getBO(BOFactory.BOType.USERACCOUNT);
 
     public void initialize() {
         try {
-            String nextuserID = registrationBO.getNextUserId();
+            String nextuserID = userBO.getNextUserId();
             lblUserID.setStyle("-fx-text-fill: #0b52ec;");
             lblUserID.setText(nextuserID);
 

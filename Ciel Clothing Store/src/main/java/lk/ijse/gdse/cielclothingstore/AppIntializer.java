@@ -37,7 +37,7 @@ public class AppIntializer extends Application {
 
             stage.setTitle("Ciel Clothing Store");
             stage.getIcons().add(new Image(getClass().getResourceAsStream("/pictures/Logo.jpg")));
-            stage.setMaximized(true);
+            stage.setMaximized(false);
 
             // Switch to the main scene
             stage.setScene(value);
@@ -52,3 +52,4 @@ public class AppIntializer extends Application {
         new Thread(loadMainSceneTask).start();
     }
 }
+

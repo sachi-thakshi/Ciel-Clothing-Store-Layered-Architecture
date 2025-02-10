@@ -7,12 +7,20 @@ public class BOFactory {
 
     private static BOFactory boFactory;
     private BOFactory() {}
-    public static BOFactory getInstance() {
-        return boFactory == null ? boFactory = new BOFactory() : boFactory;
+//    public static BOFactory getInstance() {
+//        return boFactory == null ? boFactory = new BOFactory() : boFactory;
+//    }
+
+    public static BOFactory getInstance(){
+
+        if(boFactory==null){
+            boFactory=new BOFactory();
+        }
+        return boFactory;
     }
 
     public enum BOType {
-        CUSTOMER, EMPLOYEE, ORDER_DETAILS, ORDERS, PAYMENT, PRODUCT, PRODUCT_DETAILS, SUPPLIER, USERACCOUNT
+        CUSTOMER, EMPLOYEE, ORDER_DETAILS, ORDERS, PAYMENT, PRODUCT, PRODUCT_DETAILS, SUPPLIER, USERACCOUNT, REGISTRATION, FORGOTPASSWORD
     }
 
     public SuperBO getBO(BOType type) {
@@ -35,6 +43,10 @@ public class BOFactory {
                 return new SuppilerBOImpl();
             case USERACCOUNT:
                 return new UserBOImpl();
+            case REGISTRATION:
+                return new RegistrationBOImpl();
+            case FORGOTPASSWORD:
+                return new ForgotPasswordBOImpl();
             default:
                 return null;
         }

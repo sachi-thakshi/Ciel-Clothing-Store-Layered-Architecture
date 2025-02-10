@@ -50,7 +50,7 @@ public class ForgotPasswordViewController {
     private JFXTextField txtUsername;
 
 //    private final UserModel userModel = new UserModel();
-    private final ForgotPasswordBO forgotPasswordBO = (ForgotPasswordBO) BOFactory.getInstance().getBO(BOFactory.BOType.USERACCOUNT);
+    private final ForgotPasswordBO forgotPasswordBO = (ForgotPasswordBO) BOFactory.getInstance().getBO(BOFactory.BOType.FORGOTPASSWORD);
 
     @FXML
     void showPasswordEyeLoginpressed1(MouseEvent event) {

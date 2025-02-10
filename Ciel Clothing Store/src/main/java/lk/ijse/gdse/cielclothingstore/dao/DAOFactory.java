@@ -7,8 +7,17 @@ public class DAOFactory {
     private static DAOFactory daoFactory;
     private DAOFactory() {
     }
-    public static DAOFactory getInstance() {
-        return daoFactory==null?daoFactory=new DAOFactory():daoFactory;
+//    public static DAOFactory getInstance() {
+//        return daoFactory==null?daoFactory=new DAOFactory():daoFactory;
+//    }
+
+    public static DAOFactory getInstance(){
+
+        if(daoFactory==null){
+            daoFactory=new DAOFactory();
+        }
+        return daoFactory;
+
     }
 
     public enum DAOType {
